@@ -6,6 +6,8 @@ public class PlayerControl : MonoBehaviour {
 
     static public PlayerControl instance;
 
+    public CapsuleCollider2D playerController;
+
     [SerializeField] private float moveSpeed = 5;
     [SerializeField] private float jumpSpeed = 8;
 
@@ -21,6 +23,8 @@ public class PlayerControl : MonoBehaviour {
     private void Awake() {
         instance = this;
         rig = this.GetComponent<Rigidbody2D>();
+        playerController = this.GetComponent<CapsuleCollider2D>();
+        
     }
 
     // Use this for initialization
